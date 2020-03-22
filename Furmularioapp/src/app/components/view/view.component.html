@@ -1,0 +1,57 @@
+
+<ion-header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <ion-toolbar class="new-background-color">
+      <ion-title>
+        Lista de Contactos
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="ion-padding">
+      <p>Agregar Contactos</p>
+      <form [formGroup]="DatosServiceService.registrationForm" (ngSubmit)="submit()">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input autocapitalize inputmode="text" formControlName="name"></ion-input>
+          </ion-item>
+          
+            
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input inputmode="email" formControlName="email"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input inputmode="tel" formControlName="phone"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>Notas</ion-label>
+            <ion-textarea rows="6" cols="5" formControlName="notes"></ion-textarea>
+          </ion-item>
+        </ion-list>
+        <ion-button (click)="DatosServiceService.btn()" expand="block">Agregar<ion-icon name="add-circle"></ion-icon>
+        </ion-button>
+      </form>
+      <p>Mis Contactos</p>
+      <div class="contenedor2">
+        <p>ver notas</p>
+        <ion-toggle color="primary" class="toggle"></ion-toggle>
+      </div>
+    <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle id="tel"></ion-card-subtitle>
+      <ion-card-title id="nombre" ></ion-card-title>
+      <ion-card-subtitle id="tel"></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content id="notes"> </ion-card-content>
+  </ion-card>
+  
+      
+    </div>
+    
+  
